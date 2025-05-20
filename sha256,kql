@@ -1,0 +1,3 @@
+let MISPFeed = externaldata(DestIP: string)[@"https://raw.githubusercontent.com/ross-ns/MISP-IPs/refs/heads/main/sha256.txt"] with (format="txt", ignoreFirstRecord=False);
+DeviceFileEvents
+| where SHA256 in (MISPFeed)
